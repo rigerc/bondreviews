@@ -24,6 +24,6 @@ export const REVIEWS: Metadata = {
 };
 
 export const MENU: MenuItem[] = [
-  { TITLE: "Home", HREF: "" },
-  { TITLE: "Reviews", HREF: "/reviews/" },
+  { TITLE: "Home", HREF: "../" },
+  { TITLE: "Reviews", HREF: "/reviews" },
 ];
