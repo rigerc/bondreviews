@@ -88,7 +88,7 @@
         "description": "This task involves completely removing the projects collection from the codebase and related configurations to ensure no residual references remain.",
         "details": "1. **Identify All References:** Search the entire codebase for any references to the projects collection, including database schemas, API endpoints, UI components, and configuration files.\n2. **Remove Database Artifacts:** Drop or archive the projects collection from the database, ensuring data backup if necessary.\n3. **Codebase Cleanup:** Remove all code that interacts with the projects collection, including models, controllers, services, and UI elements.\n4. **Update Configuration:** Remove any configuration settings, environment variables, or dependencies related to the projects collection.\n5. **Dependency Review:** Verify that removal does not break dependencies or integrations; refactor code as needed.\n6. **Documentation Update:** Update project documentation to reflect the removal of the projects collection.\n7. **Version Control:** Commit changes with clear messages indicating removal of the projects collection.\n\nFollow best practices for safe deletion, including backups and staged removal if needed to prevent data loss or downtime.",
         "testStrategy": "1. **Codebase Search:** Perform a comprehensive search to confirm no references to the projects collection remain.\n2. **Database Verification:** Confirm the projects collection is removed or archived as intended.\n3. **Run Automated Tests:** Execute unit, integration, and end-to-end tests to ensure no functionality is broken.\n4. **Manual Testing:** Verify the application runs without errors related to the projects collection and that UI components behave correctly.\n5. **Build and Deployment:** Confirm the project builds successfully and deploys without issues.\n6. **Peer Review:** Conduct code reviews to validate completeness of removal and adherence to best practices.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           2
         ],
@@ -100,7 +100,7 @@
             "description": "Perform a comprehensive search across the entire codebase to locate all references to the projects collection, including database schemas, API endpoints, UI components, and configuration files.",
             "dependencies": [],
             "details": "Use code search tools and IDE features to find all instances where the projects collection is referenced. Document these locations for subsequent removal steps.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that the search results cover all relevant files and components by cross-checking with project documentation and schema definitions."
           },
           {
@@ -109,7 +109,7 @@
             "description": "Create a secure backup of the projects collection data before any deletion to prevent data loss.",
             "dependencies": [],
             "details": "Export the projects collection data using database export tools or scripts. Store the backup in a safe location accessible for recovery if needed.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Confirm the backup file integrity and completeness by restoring it to a test environment."
           },
           {
@@ -118,7 +118,7 @@
             "description": "Drop or archive the projects collection from the database after ensuring a backup exists.",
             "dependencies": [],
             "details": "Use appropriate database commands such as `dropCollection` or batch delete operations with `deleteMany()` to remove the collection. Follow best practices like batching deletes if the collection is large to avoid performance issues[1][2][3].",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the collection no longer exists in the database and confirm no residual data remains."
           },
           {
@@ -127,7 +127,7 @@
             "description": "Remove all code that interacts with the projects collection, including models, controllers, services, and UI components.",
             "dependencies": [],
             "details": "Delete or refactor code files and modules that reference the projects collection. Ensure no broken imports or calls remain.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run static code analysis and perform a codebase search to confirm no references to the projects collection remain."
           },
           {
@@ -136,7 +136,7 @@
             "description": "Remove any configuration settings, environment variables, or dependencies related to the projects collection.",
             "dependencies": [],
             "details": "Edit configuration files such as environment configs, dependency manifests, and deployment scripts to remove projects collection references.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Validate that the application starts and runs without errors related to missing configuration for the projects collection."
           }
         ]
@@ -147,7 +147,7 @@
         "description": "Develop a pages configuration setup for the category index page specifically tailored to the review collection, enabling organized and user-friendly category browsing.",
         "details": "1. Analyze the review collection schema and identify relevant category fields to be displayed on the category index page.\n2. Design a pages configuration that defines the category index page layout, including widgets or components to showcase categories effectively.\n3. Implement the configuration to create a dedicated category index page for the review collection, ensuring it supports multiple categories and displays category images, titles, and summaries where applicable.\n4. Follow best practices for category page SEO, including proper use of slugs, meta titles, and descriptions as recommended for category pages.\n5. Integrate the configuration with the existing routing and navigation system to allow users to access the category index seamlessly.\n6. Ensure the configuration supports responsiveness and accessibility standards.\n7. Document the configuration setup and usage instructions for future maintenance.\n\nConsider referencing existing category index page implementations and widget-based layouts as guidance, adapting them to the review collection context[1][3].",
         "testStrategy": "1. Verify that the category index page for the review collection is accessible via the intended URL.\n2. Confirm that all categories from the review collection are displayed correctly with appropriate images, titles, and descriptions.\n3. Test navigation from the category index page to individual category pages and ensure correct content filtering.\n4. Perform SEO checks on category URLs, meta titles, and descriptions to ensure they follow best practices.\n5. Conduct responsive design testing across multiple devices and screen sizes.\n6. Run accessibility audits to confirm compliance with standards.\n7. Execute automated and manual tests to ensure no regressions in navigation or page rendering.\n8. Review logs and error reports to detect any issues related to the new configuration.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           3
         ],
@@ -159,7 +159,7 @@
             "description": "Examine the review collection schema to identify and select relevant category fields that should be displayed on the category index page.",
             "dependencies": [],
             "details": "Review the database schema and data structure of the review collection to determine which fields represent categories, including images, titles, and summaries if available.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that all identified category fields exist and contain appropriate data for display."
           },
           {
@@ -170,7 +170,7 @@
               "4.1"
             ],
             "details": "Design the page layout considering user experience best practices, including placement of category images, titles, summaries, and navigation elements, referencing existing category page implementations.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Review the design mockups or configuration drafts for completeness and usability."
           },
           {
@@ -181,7 +181,7 @@
               "4.2"
             ],
             "details": "Translate the design into actual configuration code or settings, ensuring the page dynamically displays all categories from the review collection with proper formatting and content.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test that the category index page loads correctly, displays all categories with images and text, and supports multiple categories."
           },
           {
@@ -192,8 +192,99 @@
               "3.3"
             ],
             "details": "Update routing configurations and navigation menus to include links to the category index page, ensuring users can easily find and navigate to it.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test navigation flows to confirm the category index page is accessible from relevant parts of the site without errors."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Make Header Menu Configurable Using consts.ts",
+        "description": "Define the menu structure in consts.ts and update the Header.astro component to read from it, allowing for a configurable header menu.",
+        "details": "1. **Define Menu Structure**: In consts.ts, create a structured object that represents the menu items, including properties such as title, link, and any sub-items. 2. **Update Header Component**: Modify the Header.astro component to import the menu structure from consts.ts. Use a loop to dynamically render the menu items based on the defined structure. 3. **Ensure Responsiveness**: Make sure the menu is responsive and adapts to different screen sizes, possibly using CSS media queries. 4. **Documentation**: Update any relevant documentation to reflect the new configuration method for the header menu.",
+        "testStrategy": "1. **Verify Menu Rendering**: Check that the menu items are rendered correctly in the Header component based on the structure defined in consts.ts. 2. **Test Links**: Ensure that all links in the menu navigate to the correct pages. 3. **Responsive Testing**: Test the header menu on various screen sizes to confirm it behaves as expected. 4. **Code Review**: Conduct a code review to ensure best practices are followed in the implementation.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Define Menu Structure in consts.ts",
+            "description": "Create a structured object in consts.ts representing the header menu items, including properties such as title, link, and optional sub-items.",
+            "dependencies": [],
+            "details": "Design a clear and extensible menu data structure in consts.ts that can represent nested menu items if needed. Ensure it includes all necessary fields for rendering and navigation.",
+            "status": "done",
+            "testStrategy": "Verify the object structure correctness and completeness by inspecting the exported menu data."
+          },
+          {
+            "id": 2,
+            "title": "Import Menu Structure into Header.astro",
+            "description": "Modify the Header.astro component to import the menu structure from consts.ts for dynamic rendering.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Update Header.astro to import the menu object and prepare it for rendering. Remove any hardcoded menu items previously defined in the component.",
+            "status": "done",
+            "testStrategy": "Confirm that the imported menu data is accessible within Header.astro without errors."
+          },
+          {
+            "id": 3,
+            "title": "Implement Dynamic Menu Rendering in Header.astro",
+            "description": "Use a loop in Header.astro to dynamically render menu items based on the imported menu structure.",
+            "dependencies": [
+              "5.2"
+            ],
+            "details": "Implement iteration over the menu object to generate menu links and submenus if applicable. Ensure proper HTML structure and accessibility attributes.",
+            "status": "done",
+            "testStrategy": "Check that all menu items and sub-items render correctly and match the structure defined in consts.ts."
+          },
+          {
+            "id": 4,
+            "title": "Add Responsive Behavior to Header Menu",
+            "description": "Ensure the header menu is responsive and adapts to different screen sizes using CSS media queries or JavaScript toggles.",
+            "dependencies": [
+              "5.3"
+            ],
+            "details": "Implement CSS media queries and/or JavaScript to toggle menu visibility on smaller screens, including hamburger menu functionality if needed.",
+            "status": "pending",
+            "testStrategy": "Test menu display and usability on various screen sizes and devices to confirm responsiveness."
+          },
+          {
+            "id": 5,
+            "title": "Integrate Accessibility Features",
+            "description": "Enhance the header menu with accessibility features such as keyboard navigation and ARIA attributes.",
+            "dependencies": [
+              "5.3"
+            ],
+            "details": "Add appropriate ARIA roles, labels, and keyboard event handling to ensure the menu is accessible to all users.",
+            "status": "pending",
+            "testStrategy": "Use accessibility testing tools and keyboard navigation to verify compliance."
+          },
+          {
+            "id": 6,
+            "title": "Update Documentation for Configurable Header Menu",
+            "description": "Document the new header menu configuration approach using consts.ts and how to modify the menu structure.",
+            "dependencies": [
+              "5.1",
+              "5.3"
+            ],
+            "details": "Provide clear instructions and examples in the project documentation on how to update the menu structure and how the Header.astro component uses it.",
+            "status": "pending",
+            "testStrategy": "Review documentation clarity and completeness; verify that following the documentation results in expected menu changes."
+          },
+          {
+            "id": 7,
+            "title": "Test Complete Header Menu Functionality",
+            "description": "Perform comprehensive testing to verify correct menu rendering, link navigation, responsiveness, and accessibility.",
+            "dependencies": [
+              "5.4",
+              "5.5"
+            ],
+            "details": "Test that menu items render correctly from consts.ts, all links navigate properly, the menu is responsive on different devices, and accessibility features function as intended.",
+            "status": "pending",
+            "testStrategy": "Manual and automated tests covering rendering, navigation, responsiveness, and accessibility compliance."
           }
         ]
       }
@@ -201,7 +292,7 @@
     "metadata": {
       "created": "2025-08-20T19:46:17.555Z",
       "description": "Default tasks context",
-      "updated": "2025-08-20T19:59:34.536Z"
+      "updated": "2025-08-20T21:21:47.069Z"
     }
   }
 }

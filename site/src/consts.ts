@@ -1,11 +1,11 @@
-import type { Metadata, Site, Socials } from "@types";
+import type { Metadata, Site, MenuItem } from "@types";
 
 export const SITE: Site = {
   TITLE: "Bond Reviews",
   DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
   EMAIL: "bond@bsgb.nl",
   NUM_POSTS_ON_HOMEPAGE: 15,
-  NUM_PROJECTS_ON_HOMEPAGE: 0,
+  NUM_REVIEWS_ON_HOMEPAGE: 15,
 };
 
 export const HOME: Metadata = {
@@ -23,23 +23,8 @@ export const REVIEWS: Metadata = {
   DESCRIPTION: "A collection of reviews",
 };
 
-export const PROJECTS: Metadata = {
-  TITLE: "Projects",
-  DESCRIPTION:
-    "A collection of my projects with links to repositories and live demos.",
-};
-
-export const SOCIALS: Socials = [
-  {
-    NAME: "X (formerly Twitter)",
-    HREF: "https://twitter.com/boogerbuttcheek",
-  },
-  {
-    NAME: "GitHub",
-    HREF: "https://github.com/trevortylerlee",
-  },
-  {
-    NAME: "Website",
-    HREF: "https://trevortylerlee.com",
-  },
+export const MENU: MenuItem[] = [
+  { TITLE: "Home", HREF: "/" },
+  { TITLE: "Blog", HREF: "/blog" },
+  { TITLE: "Reviews", HREF: "/reviews" },
 ];

@@ -5,15 +5,11 @@ import { getCollection } from "astro:content";
 export async function GET(context) {
   const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
 
-  const projects = (await getCollection("projects")).filter(
-    (project) => !project.data.draft,
-  );
-
   const reviews = (await getCollection("reviews")).filter(
     (review) => !review.data.draft,
   );
 
-  const items = [...blog, ...projects, ...reviews].sort(
+  const items = [...blog, ...reviews].sort(
     (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
   );
 

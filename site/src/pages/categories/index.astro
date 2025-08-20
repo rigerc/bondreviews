@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
+
+const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
+const reviews = (await getCollection("reviews")).filter(
+  (review) => !review.data.draft,
+);
+
+const allCategories = [
+  ...new Set([
+    ...blog.map((post) => post.data.tags || []).flat(),
+    ...reviews.map((review) => review.data.categories).flat(),
+  ]),
+].sort((a, b) => a.localeCompare(b));
+---
+
+<Layout title={SITE.TITLE} description={SITE.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Categories
+      </div>
+      <ul class="animate not-prose flex flex-col gap-4">
+        {allCategories.map((category) => (
+          <li>
+            <Link href={`/categories/${category}`}>{category}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Container>
+</Layout>

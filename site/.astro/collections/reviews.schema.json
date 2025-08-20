@@ -42,7 +42,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "maxItems": 1
         },
         "$schema": {
           "type": "string"
