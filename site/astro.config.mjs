@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rigerc.github.io",
+  site: "https://bbssggbb.github.io",
   trailingSlash: "ignore",
   integrations: [sitemap(), mdx()],
   vite: {
