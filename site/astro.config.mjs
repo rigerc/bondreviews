@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://rigerc.github.io",
   base: "/bondreviews",
+  trailingSlash: "ignore",
   integrations: [sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
