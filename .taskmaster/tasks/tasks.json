@@ -1,0 +1,207 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 2,
+        "title": "Remove Giscus Component and Integration",
+        "description": "This task involves removing the Giscus component and any remaining integration from the project, ensuring all related configurations and dependencies are fully removed.",
+        "details": "1. **Identify Remaining Giscus Components**: Locate any remaining Giscus components in the codebase, including any custom or third-party components that may still reference Giscus. 2. **Remove Giscus Components**: Remove these components from the relevant parts of the codebase, ensuring that no references to Giscus remain. 3. **Update Project Configuration**: Review and update project configuration files (e.g., `package.json`, environment variables) to remove any references to Giscus. 4. **Remove Styles and Assets**: Ensure that any styles or assets related to Giscus are also removed. 5. **Verify Build Process**: Run the build process to ensure that the removal does not introduce any errors or warnings. 6. **Review for Dependencies**: Check if any other components or libraries depend on Giscus and update them accordingly.",
+        "testStrategy": "1. **Search for Remaining References**: Perform a thorough search across the project files to verify that there are no remaining references to Giscus. 2. **Run Application**: Run the application to ensure it functions correctly without any errors related to Giscus. 3. **Check Build Output**: Review the build output to confirm there are no warnings or errors related to Giscus.",
+        "status": "pending",
+        "dependencies": [
+          1
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Locate All Giscus Components and References",
+            "description": "Perform a comprehensive search in the codebase to identify all instances of Giscus components, including custom wrappers, third-party components, API calls, and any references in code files.",
+            "dependencies": [],
+            "details": "Search for imports, usage of '@giscus/react' or other Giscus packages, script tags, and any configuration references related to Giscus.",
+            "status": "pending",
+            "testStrategy": "Verify no Giscus references remain by searching the entire project files."
+          },
+          {
+            "id": 2,
+            "title": "Remove Giscus Components from Codebase",
+            "description": "Delete all identified Giscus components and related code from the project, ensuring no residual references remain in UI components or pages.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Remove imports and JSX/TSX usage of Giscus components, including any conditional rendering or wrappers that include Giscus.",
+            "status": "pending",
+            "testStrategy": "Run the application to confirm no runtime errors related to missing Giscus components."
+          },
+          {
+            "id": 3,
+            "title": "Clean Up Project Configuration Files",
+            "description": "Update configuration files such as package.json, environment variables, and any build or deployment scripts to remove Giscus-related entries.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Remove '@giscus/react' or other Giscus packages from dependencies, delete environment variables related to Giscus, and remove any Giscus-specific config blocks.",
+            "status": "pending",
+            "testStrategy": "Run package manager install and build commands to ensure no errors or warnings about missing Giscus packages."
+          },
+          {
+            "id": 4,
+            "title": "Remove Giscus Styles and Assets",
+            "description": "Identify and delete any CSS styles, assets, or static files specifically used for Giscus components or styling.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Check global stylesheets, component-specific styles, and asset folders for Giscus-related files and remove them.",
+            "status": "pending",
+            "testStrategy": "Verify UI appearance is unaffected except for the removal of Giscus elements."
+          },
+          {
+            "id": 5,
+            "title": "Check for Dependencies on Giscus by Other Components",
+            "description": "Analyze if any other components or libraries depend on Giscus functionality and update or refactor them accordingly.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Review component dependency graphs and code to ensure no indirect reliance on Giscus remains.",
+            "status": "pending",
+            "testStrategy": "Run integration tests to confirm no broken functionality due to Giscus removal."
+          },
+          {
+            "id": 6,
+            "title": "Verify Build Process and Application Stability",
+            "description": "Run the full build process and execute the application to ensure that removing Giscus does not introduce errors or warnings.",
+            "dependencies": [
+              "2.2",
+              "2.3",
+              "2.4",
+              "2.5"
+            ],
+            "details": "Perform build and deployment steps, then run the application locally or in staging to confirm stability.",
+            "status": "pending",
+            "testStrategy": "Check build logs for errors/warnings and perform manual or automated testing of affected areas."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Remove Projects Collection",
+        "description": "This task involves completely removing the projects collection from the codebase and related configurations to ensure no residual references remain.",
+        "details": "1. **Identify All References:** Search the entire codebase for any references to the projects collection, including database schemas, API endpoints, UI components, and configuration files.\n2. **Remove Database Artifacts:** Drop or archive the projects collection from the database, ensuring data backup if necessary.\n3. **Codebase Cleanup:** Remove all code that interacts with the projects collection, including models, controllers, services, and UI elements.\n4. **Update Configuration:** Remove any configuration settings, environment variables, or dependencies related to the projects collection.\n5. **Dependency Review:** Verify that removal does not break dependencies or integrations; refactor code as needed.\n6. **Documentation Update:** Update project documentation to reflect the removal of the projects collection.\n7. **Version Control:** Commit changes with clear messages indicating removal of the projects collection.\n\nFollow best practices for safe deletion, including backups and staged removal if needed to prevent data loss or downtime.",
+        "testStrategy": "1. **Codebase Search:** Perform a comprehensive search to confirm no references to the projects collection remain.\n2. **Database Verification:** Confirm the projects collection is removed or archived as intended.\n3. **Run Automated Tests:** Execute unit, integration, and end-to-end tests to ensure no functionality is broken.\n4. **Manual Testing:** Verify the application runs without errors related to the projects collection and that UI components behave correctly.\n5. **Build and Deployment:** Confirm the project builds successfully and deploys without issues.\n6. **Peer Review:** Conduct code reviews to validate completeness of removal and adherence to best practices.",
+        "status": "pending",
+        "dependencies": [
+          2
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Identify All References to Projects Collection",
+            "description": "Perform a comprehensive search across the entire codebase to locate all references to the projects collection, including database schemas, API endpoints, UI components, and configuration files.",
+            "dependencies": [],
+            "details": "Use code search tools and IDE features to find all instances where the projects collection is referenced. Document these locations for subsequent removal steps.",
+            "status": "pending",
+            "testStrategy": "Verify that the search results cover all relevant files and components by cross-checking with project documentation and schema definitions."
+          },
+          {
+            "id": 2,
+            "title": "Backup Projects Collection Data",
+            "description": "Create a secure backup of the projects collection data before any deletion to prevent data loss.",
+            "dependencies": [],
+            "details": "Export the projects collection data using database export tools or scripts. Store the backup in a safe location accessible for recovery if needed.",
+            "status": "pending",
+            "testStrategy": "Confirm the backup file integrity and completeness by restoring it to a test environment."
+          },
+          {
+            "id": 3,
+            "title": "Remove Projects Collection from Database",
+            "description": "Drop or archive the projects collection from the database after ensuring a backup exists.",
+            "dependencies": [],
+            "details": "Use appropriate database commands such as `dropCollection` or batch delete operations with `deleteMany()` to remove the collection. Follow best practices like batching deletes if the collection is large to avoid performance issues[1][2][3].",
+            "status": "pending",
+            "testStrategy": "Verify the collection no longer exists in the database and confirm no residual data remains."
+          },
+          {
+            "id": 4,
+            "title": "Clean Up Codebase References",
+            "description": "Remove all code that interacts with the projects collection, including models, controllers, services, and UI components.",
+            "dependencies": [],
+            "details": "Delete or refactor code files and modules that reference the projects collection. Ensure no broken imports or calls remain.",
+            "status": "pending",
+            "testStrategy": "Run static code analysis and perform a codebase search to confirm no references to the projects collection remain."
+          },
+          {
+            "id": 5,
+            "title": "Update Configuration and Environment Settings",
+            "description": "Remove any configuration settings, environment variables, or dependencies related to the projects collection.",
+            "dependencies": [],
+            "details": "Edit configuration files such as environment configs, dependency manifests, and deployment scripts to remove projects collection references.",
+            "status": "pending",
+            "testStrategy": "Validate that the application starts and runs without errors related to missing configuration for the projects collection."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Create Pages Configuration for Category Index in Review Collection",
+        "description": "Develop a pages configuration setup for the category index page specifically tailored to the review collection, enabling organized and user-friendly category browsing.",
+        "details": "1. Analyze the review collection schema and identify relevant category fields to be displayed on the category index page.\n2. Design a pages configuration that defines the category index page layout, including widgets or components to showcase categories effectively.\n3. Implement the configuration to create a dedicated category index page for the review collection, ensuring it supports multiple categories and displays category images, titles, and summaries where applicable.\n4. Follow best practices for category page SEO, including proper use of slugs, meta titles, and descriptions as recommended for category pages.\n5. Integrate the configuration with the existing routing and navigation system to allow users to access the category index seamlessly.\n6. Ensure the configuration supports responsiveness and accessibility standards.\n7. Document the configuration setup and usage instructions for future maintenance.\n\nConsider referencing existing category index page implementations and widget-based layouts as guidance, adapting them to the review collection context[1][3].",
+        "testStrategy": "1. Verify that the category index page for the review collection is accessible via the intended URL.\n2. Confirm that all categories from the review collection are displayed correctly with appropriate images, titles, and descriptions.\n3. Test navigation from the category index page to individual category pages and ensure correct content filtering.\n4. Perform SEO checks on category URLs, meta titles, and descriptions to ensure they follow best practices.\n5. Conduct responsive design testing across multiple devices and screen sizes.\n6. Run accessibility audits to confirm compliance with standards.\n7. Execute automated and manual tests to ensure no regressions in navigation or page rendering.\n8. Review logs and error reports to detect any issues related to the new configuration.",
+        "status": "pending",
+        "dependencies": [
+          3
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Analyze Review Collection Schema for Category Fields",
+            "description": "Examine the review collection schema to identify and select relevant category fields that should be displayed on the category index page.",
+            "dependencies": [],
+            "details": "Review the database schema and data structure of the review collection to determine which fields represent categories, including images, titles, and summaries if available.",
+            "status": "pending",
+            "testStrategy": "Verify that all identified category fields exist and contain appropriate data for display."
+          },
+          {
+            "id": 2,
+            "title": "Design Pages Configuration for Category Index Layout",
+            "description": "Create a detailed pages configuration design that defines the layout of the category index page, specifying widgets or components to effectively showcase categories.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "Design the page layout considering user experience best practices, including placement of category images, titles, summaries, and navigation elements, referencing existing category page implementations.",
+            "status": "pending",
+            "testStrategy": "Review the design mockups or configuration drafts for completeness and usability."
+          },
+          {
+            "id": 3,
+            "title": "Implement Category Index Page Configuration",
+            "description": "Develop and implement the pages configuration to create a dedicated category index page for the review collection, supporting multiple categories with images, titles, and summaries.",
+            "dependencies": [
+              "4.2"
+            ],
+            "details": "Translate the design into actual configuration code or settings, ensuring the page dynamically displays all categories from the review collection with proper formatting and content.",
+            "status": "pending",
+            "testStrategy": "Test that the category index page loads correctly, displays all categories with images and text, and supports multiple categories."
+          },
+          {
+            "id": 4,
+            "title": "Integrate Category Index Page with Routing and Navigation",
+            "description": "Ensure the new category index page is fully integrated with the existing site routing and navigation system for seamless user access.",
+            "dependencies": [
+              "3.3"
+            ],
+            "details": "Update routing configurations and navigation menus to include links to the category index page, ensuring users can easily find and navigate to it.",
+            "status": "pending",
+            "testStrategy": "Test navigation flows to confirm the category index page is accessible from relevant parts of the site without errors."
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-08-20T19:46:17.555Z",
+      "description": "Default tasks context",
+      "updated": "2025-08-20T19:59:34.536Z"
+    }
+  }
+}
