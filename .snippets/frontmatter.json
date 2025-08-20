@@ -1,0 +1,81 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.supportedFileTypes": [ "md", "markdown", "mdx" ],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/src/content/blog"
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": "'blog'",
+      "fileType": "mdx",
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Last updated",
+          "name": "updatedDate",
+          "type": "datetime"
+        },
+        {
+          "title": "Rating",
+          "name": "rating",
+          "type": "number",
+          "default": 1,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "type": "select",
+          "default": "draft",
+          "options": [
+            "draft",
+            "published",
+            "archived"
+          ]
+        },
+        {
+          "title": "Related link",
+          "name": "related_link",
+          "type": "url",
+          "default": null
+        },
+        {
+          "title": "Release year",
+          "name": "release_year",
+          "type": "number",
+          "default": null
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
