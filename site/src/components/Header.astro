@@ -16,7 +16,7 @@ import { SITE, MENU } from "@consts";
         {MENU.map((item, i) => {
           return (
             <span class="flex items-center gap-1">
-              <Link href={item.HREF}>{item.TITLE}</Link>
+              <a href={item.HREF}>{item.TITLE}</Link>
               {i < MENU.length - 1 ? <span>{`/`}</span> : null}
             </span>
           );
