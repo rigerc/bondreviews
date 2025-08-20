@@ -1,6 +1,4 @@
 ---
-import TableOfContentsHeading from "./TableOfContentsHeading.astro";
-
 // https://kld.dev/building-table-of-contents/
 const { headings } = Astro.props;
 const toc = buildToc(headings);
@@ -9,20 +7,27 @@ export interface Heading {
   depth: number;
   slug: string;
   text: string;
+  subheadings?: Heading[];
 }
 
 function buildToc(headings: Heading[]) {
   const toc: Heading[] = [];
   const parentHeadings = new Map();
-  headings.forEach((h) => {
+
+  headings?.forEach((h) => {
     const heading = { ...h, subheadings: [] };
     parentHeadings.set(heading.depth, heading);
+
     if (heading.depth === 2) {
       toc.push(heading);
     } else {
-      parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+      const parent = parentHeadings.get(heading.depth - 1);
+      if (parent) {
+        parent.subheadings.push(heading);
+      }
     }
   });
+
   return toc;
 }
 ---
@@ -37,7 +42,30 @@ function buildToc(headings: Heading[]) {
   >
   <nav>
     <ul class="py-3">
-      {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
+      {toc.map((heading) => (
+        <li>
+          <a
+            href={`#${heading.slug}`}
+            class="block py-1 text-sm text-black/70 hover:text-black hover:underline dark:text-white/70 hover:dark:text-white"
+          >
+            {heading.text}
+          </a>
+          {heading.subheadings && heading.subheadings.length > 0 && (
+            <ul class="ml-4 mt-1">
+              {heading.subheadings.map((subheading) => (
+                <li>
+                  <a
+                    href={`#${subheading.slug}`}
+                    class="block py-1 text-sm text-black/60 hover:text-black hover:underline dark:text-white/60 hover:dark:text-white"
+                  >
+                    {subheading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
     </ul>
   </nav>
 </details>
