@@ -28,7 +28,8 @@ collections:
   - name: "reviews"
     label: "Reviews"
     label_singular: "Review"
-    folder: "site/src/content/reviews"
+    folder: site/src/content/reviews
+    format: frontmatter
     create: true
     slug: "{{slug}}"
     preview_path: "/reviews/{{slug}}/"
