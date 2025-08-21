@@ -1,4 +1,5 @@
 site/dist/
 site/public/
+!site/public/admin/config.yml
 site/node_modules/
 site/package-lock.json

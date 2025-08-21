@@ -363,7 +363,7 @@
         "description": "This task involves completely removing the TableOfContents feature from the codebase, ensuring that all references and configurations related to it are eliminated.",
         "details": "1. **Identify All References:** Search the entire codebase for any references to the TableOfContents feature, including database schemas, API endpoints, UI components, and configuration files. 2. **Remove Database Artifacts:** If applicable, drop or archive any database artifacts related to the TableOfContents feature, ensuring data backup if necessary. 3. **Codebase Cleanup:** Remove all code that interacts with the TableOfContents feature, including models, controllers, services, and UI elements. 4. **Update Configuration:** Remove any configuration settings related to the TableOfContents feature from configuration files. 5. **Documentation Update:** Update any documentation that references the TableOfContents feature to reflect its removal.",
         "testStrategy": "1. **Codebase Search:** Perform a comprehensive search to confirm no references to the TableOfContents feature remain. 2. **Run Application:** Run the application to ensure it functions correctly without any errors related to the TableOfContents feature. 3. **Check Build Output:** Review the build output to ensure there are no warnings or errors related to the removed feature. 4. **User Acceptance Testing:** Conduct user acceptance testing to ensure that the removal of the TableOfContents feature does not affect other functionalities.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           2,
           3
@@ -376,7 +376,7 @@
             "description": "Search the entire codebase for any references to the TableOfContents feature, including database schemas, API endpoints, UI components, and configuration files.",
             "dependencies": [],
             "details": "Use a code search tool or IDE features to locate all instances of 'TableOfContents' in the codebase. Document each reference found for further action.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that all references are documented and categorized for removal."
           },
           {
@@ -387,7 +387,7 @@
               "7.1"
             ],
             "details": "Identify any database tables or records associated with the TableOfContents feature. Use SQL commands to drop these tables or create backups as needed before removal.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Confirm that all related database artifacts are removed or archived by running a database query."
           },
           {
@@ -398,7 +398,7 @@
               "7.2"
             ],
             "details": "Systematically go through the codebase to delete all files and code segments that reference or depend on the TableOfContents feature. Ensure that the application still compiles without errors.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run the application to ensure it functions correctly without any errors related to the TableOfContents feature."
           },
           {
@@ -409,7 +409,7 @@
               "7.3"
             ],
             "details": "Review all configuration files (e.g., environment variables, settings files) for any entries related to the TableOfContents feature and remove them.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Check the configuration files to ensure no references to the TableOfContents feature remain."
           },
           {
@@ -420,7 +420,7 @@
               "7.4"
             ],
             "details": "Review all project documentation, including README files, API documentation, and user guides, to remove or update sections that mention the TableOfContents feature.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Conduct a final review of the documentation to ensure all references to the TableOfContents feature have been removed."
           }
         ]
@@ -429,9 +429,9 @@
         "id": 8,
         "title": "Install DaisyUI for Astro Project",
         "description": "Integrate DaisyUI into the Astro project that already has TailwindCSS and Vite installed.",
-        "details": "1. **Install DaisyUI**: Use npm or yarn to install DaisyUI by running `npm install daisyui` or `yarn add daisyui`. 2. **Configure TailwindCSS**: Open the TailwindCSS configuration file (tailwind.config.js) and add DaisyUI as a plugin. This can be done by adding `require('daisyui')` to the plugins array. 3. **Update Styles**: Ensure that the global styles are updated to include DaisyUI components. You may need to import DaisyUI styles in your main CSS file. 4. **Test Components**: Utilize DaisyUI components in your Astro project to ensure they render correctly and integrate seamlessly with existing styles. 5. **Documentation Review**: Review DaisyUI documentation for any additional configuration or usage guidelines that may be necessary for optimal integration.",
+        "details": "1. **Install DaisyUI**: Use npm or yarn to install DaisyUI by running `npm install daisyui` or `yarn add daisyui`. 2. **Configure TailwindCSS**: Open the TailwindCSS configuration file (tailwind.config.js) and add DaisyUI as a plugin. This can be done by adding `require('daisyui')` to the plugins array. 3. **Update Styles**: Ensure that the global styles are updated to include DaisyUI components. You may need to import DaisyUI styles in your main CSS file. 4. **Test Components**: Utilize DaisyUI components in your Astro project to ensure they render correctly and integrate seamlessly with existing styles. 5. **Documentation Review**: Review DaisyUI documentation for any additional configuration or usage guidelines that may be necessary for optimal integration.\n<info added on 2025-08-21T17:12:57.791Z>\nResearch on 'npx astro add daisyui' indicates that there is no official command for this. Instead, DaisyUI needs to be manually integrated with Tailwind CSS in an Astro project. The steps involve: 1. Install DaisyUI: `npm install -D daisyui@latest` 2. Configure Tailwind CSS: Add `require('daisyui')` to the `plugins` array in `tailwind.config.js`. 3. Import styles: Add `@plugin \"daisyui\";` in the main CSS file. 4. Ensure Astro config includes Tailwind integration: Verify `@astrojs/tailwind` integration in `astro.config.mjs`. 5. Use DaisyUI components: Start using DaisyUI class names in Astro pages.\n</info added on 2025-08-21T17:12:57.791Z>",
         "testStrategy": "1. **Component Rendering**: Create a test page that uses various DaisyUI components to verify they render correctly. 2. **Style Verification**: Check that the styles applied by DaisyUI do not conflict with existing TailwindCSS styles. 3. **Functionality Testing**: Interact with DaisyUI components (e.g., buttons, modals) to ensure they function as expected. 4. **Build and Deploy**: Run the build process and deploy the application to confirm that DaisyUI is included in the final output without errors.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           4
         ],
@@ -443,7 +443,7 @@
             "description": "Use npm or yarn to install DaisyUI in the Astro project.",
             "dependencies": [],
             "details": "Run the command `npm install daisyui` or `yarn add daisyui` in the terminal to install DaisyUI as a dependency in your project.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that DaisyUI is listed in the package.json dependencies."
           },
           {
@@ -452,7 +452,7 @@
             "description": "Add DaisyUI as a plugin in the TailwindCSS configuration.",
             "dependencies": [],
             "details": "Open the tailwind.config.js file and add `require('daisyui')` to the plugins array. Ensure that the configuration is correctly formatted.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Check the TailwindCSS configuration file to confirm that DaisyUI is included in the plugins array."
           },
           {
@@ -461,7 +461,7 @@
             "description": "Ensure that the global styles include DaisyUI components.",
             "dependencies": [],
             "details": "Import DaisyUI styles in your main CSS file by adding `@import 'daisyui';` at the top of your CSS file to ensure DaisyUI components are styled correctly.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Inspect the main CSS file to confirm that DaisyUI styles are imported."
           },
           {
@@ -470,7 +470,7 @@
             "description": "Utilize DaisyUI components in the Astro project to verify their functionality and appearance.",
             "dependencies": [],
             "details": "Create a test page in your Astro project that uses various DaisyUI components. Ensure they render correctly and integrate seamlessly with existing styles.",
-            "status": "pending",
+            "status": "review",
             "testStrategy": "Check the test page in the browser to ensure all DaisyUI components render without errors and match the expected styles."
           }
         ]
@@ -479,7 +479,7 @@
     "metadata": {
       "created": "2025-08-20T19:46:17.555Z",
       "description": "Default tasks context",
-      "updated": "2025-08-21T16:34:59.569Z"
+      "updated": "2025-08-21T17:25:06.004Z"
     }
   }
 }
