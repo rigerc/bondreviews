@@ -1,0 +1,65 @@
+settings:
+  content:
+    merge: true
+
+media:
+  input: site/public
+  output: /
+
+content:
+  - name: reviews
+    label: Reviews
+    type: collection
+    path: site/src/content/reviews
+    format: yaml-frontmatter
+    view:
+      fields: [ title, date, rating ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: desc
+      layout: tree
+      node:
+        filename: index.md
+        hideDirs: all
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: false
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+      - name: rating
+        label: Rating
+        type: number
+        options:
+          min: 1
+          max: 5
+      - name: related_link
+        label: Related Link
+        type: string
+        options:
+          pattern: '^(https?://)?([\\w.-])+(:\\d+)?(/\\S*)?$'
+      - name: release_year
+        label: Release Year
+        type: number
+      - name: categories
+        label: Categories
+        type: select
+        options:
+          multiple: false
+          creatable: true
+          values: [ music, film, book ]
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          media: uploads
