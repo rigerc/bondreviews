@@ -1,6 +1,7 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
+import BaseLink from "@components/Link.astro";
 import { SITE, MENU } from "@consts";
 ---
  
@@ -16,7 +17,7 @@ import { SITE, MENU } from "@consts";
         {MENU.map((item, i) => {
           return (
             <span class="flex items-center gap-1">
-              <a href={item.HREF}>{item.TITLE}</Link>
+              <BaseLink href={item.HREF}>{item.TITLE}</Link>
               {i < MENU.length - 1 ? <span>{`/`}</span> : null}
             </span>
           );
