@@ -21,6 +21,9 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 # Add site links in DecapCMS (optional)
 site_url: https://rigerc.github.io
 
+media_folder: "site/public/uploads"
+public_folder: "/uploads"
+
 collections:
   - name: "reviews"
     label: "Reviews"
