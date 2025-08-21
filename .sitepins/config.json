@@ -1,0 +1,14 @@
+{
+  "media": {
+    "root": "site/public/uploads",
+    "public": "site/public/uploads"
+  },
+  "content": {
+    "root": "site/src/content"
+  },
+  "themeConfig": [
+    "site/astro.config.mjs"
+  ],
+  "arrangement": [],
+  "showCommitModal": false
+}
