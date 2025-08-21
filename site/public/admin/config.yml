@@ -1,11 +1,25 @@
-# Decap CMS configuration for the Astro "reviews" collection
-# Paste this file at: site/public/admin/config.yml
-
+# Use DecapBridge auth (required)
 backend:
   name: git-gateway
+  repo: rigerc/rigerc.github.io
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/996479d6-dd09-4ff6-81dd-e6d326a0bff6
+  gateway_url: https://gateway.decapbridge.com
 
-media_folder: "site/public/uploads"
-public_folder: "/uploads"
+  # Quickly see who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+# Better Decap + Bridge logo (optional)
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Add site links in DecapCMS (optional)
+site_url: https://rigerc.github.io
 
 collections:
   - name: "reviews"
