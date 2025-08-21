@@ -6,28 +6,20 @@ import ArrowCard from "@components/ArrowCard.astro";
 import { SITE } from "@consts";
 
 export async function getStaticPaths() {
-  const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
   const reviews = (await getCollection("reviews")).filter(
     (review) => !review.data.draft,
   );
 
-  const allEntries = [...blog, ...reviews];
-
   const uniqueCategories = [
-    ...new Set([
-      ...blog.map((post) => post.data.tags || []).flat(),
-      ...reviews.map((review) => review.data.categories).flat(),
-    ]),
+    ...new Set(reviews.map((review) => review.data.categories).flat()),
   ];
 
   return uniqueCategories.map((category) => {
     return {
       params: { category: category },
       props: {
-        entries: allEntries.filter(
-          (entry) =>
-            (entry.collection === "blog" && entry.data.tags?.includes(category)) ||
-            (entry.collection === "reviews" && entry.data.categories.includes(category)),
+        entries: reviews.filter((review) =>
+          review.data.categories.includes(category),
         ),
         category: category,
       },

@@ -5,16 +5,12 @@ import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { SITE } from "@consts";
 
-const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
 const reviews = (await getCollection("reviews")).filter(
   (review) => !review.data.draft,
 );
 
 const allCategories = [
-  ...new Set([
-    ...blog.map((post) => post.data.tags || []).flat(),
-    ...reviews.map((review) => review.data.categories).flat(),
-  ]),
+  ...new Set(reviews.map((review) => review.data.categories).flat()),
 ].sort((a, b) => a.localeCompare(b));
 ---
 

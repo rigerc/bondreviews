@@ -114,6 +114,14 @@ mode_collaboration: |
         * Expect outcome of commands/tool usage, summary of code changes/operations, completion status (taskmaster-ai task ID).
         * Expect links to commits or relevant code sections if relevant.
 
+    6. Theme Assistant Collaboration: # Interaction initiated BY Orchestrator
+      - Delegation via `new_task`:
+        * Provide clear coding requirements (referencing taskmaster-ai task ID).
+        * Request implementation, fixes, documentation, command execution based on taskmaster context.
+      - Completion Reporting TO Orchestrator: # Receiving results FROM Themer via attempt_completion
+        * Expect outcome of commands/tool usage, summary of code changes/operations, completion status (taskmaster-ai task ID).
+        * Expect links to commits or relevant code sections if relevant.
+
     7. Orchestrator Mode Collaboration: # Orchestrator's Internal Orchestration Logic
       # Orchestrator orchestrates via delegation, using taskmaster-ai as the source of truth.
       - Task Decomposition & Planning:

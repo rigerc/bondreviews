@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "astro-dev": {
+      "url": "http://localhost:4321/__mcp/sse",
+      "alwaysAllow": [
+        "get-vite-config",
+        "get-vite-module-info",
+        "get-astro-config",
+        "list-astro-routes",
+        "get-astro-server-address",
+        "list-astro-integrations",
+        "get-astro-integration",
+        "search-astro-docs",
+        "get-astro-changes"
+      ]
+    }
+  }
+}

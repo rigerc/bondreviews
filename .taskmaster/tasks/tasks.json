@@ -287,12 +287,199 @@
             "testStrategy": "Manual and automated tests covering rendering, navigation, responsiveness, and accessibility compliance."
           }
         ]
+      },
+      {
+        "id": 6,
+        "title": "Remove Blog Collection from Astro Project",
+        "description": "This task involves completely removing the blog collection from the Astro project, ensuring that all references and configurations related to the blog are eliminated.",
+        "details": "1. **Identify All References:** Search the entire codebase for any references to the blog collection, including database schemas, API endpoints, UI components, and configuration files. 2. **Remove Database Artifacts:** Drop or archive the blog collection from the database, ensuring data backup if necessary. 3. **Codebase Cleanup:** Remove all code that interacts with the blog collection, including models, controllers, services, and UI elements. 4. **Update Configuration:** Remove any configuration files or settings that reference the blog collection. 5. **Documentation Update:** Update any project documentation to reflect the removal of the blog collection, ensuring that any references to it are also eliminated.",
+        "testStrategy": "1. **Codebase Search:** Perform a comprehensive search to confirm no references to the blog collection remain. 2. **Database Verification:** Confirm the blog collection is removed or archived as intended. 3. **Run Automated Tests:** Execute unit, integration, and end-to-end tests to ensure that the application functions correctly without the blog collection. 4. **Manual Testing:** Navigate through the application to ensure that no errors or broken links related to the blog collection are present.",
+        "status": "pending",
+        "dependencies": [
+          2,
+          3
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Identify All References to Blog Collection",
+            "description": "Search the entire Astro project codebase for any references to the blog collection, including database schemas, API endpoints, UI components, and configuration files.",
+            "dependencies": [],
+            "details": "Perform a comprehensive search across source code, configuration files, and content collections to locate all instances where the blog collection is referenced or used.",
+            "status": "done",
+            "testStrategy": "Verify that a thorough search report is generated listing all found references to the blog collection."
+          },
+          {
+            "id": 2,
+            "title": "Backup and Remove Blog Collection Database Artifacts",
+            "description": "Backup any necessary data and then drop or archive the blog collection from the database to ensure no residual data remains.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Ensure data backup is completed before removing the blog collection from the database or content storage. Confirm that the collection is fully removed or archived as per project requirements.",
+            "status": "done",
+            "testStrategy": "Verify backup integrity and confirm the blog collection no longer exists in the database."
+          },
+          {
+            "id": 3,
+            "title": "Clean Up Codebase by Removing Blog Collection Code",
+            "description": "Remove all code that interacts with the blog collection, including models, controllers, services, UI components, and any related utilities.",
+            "dependencies": [
+              "6.1",
+              "6.2"
+            ],
+            "details": "Delete or refactor code files and modules that depend on the blog collection to prevent build or runtime errors.",
+            "status": "done",
+            "testStrategy": "Run static code analysis and automated tests to confirm no references to the blog collection remain in the codebase."
+          },
+          {
+            "id": 4,
+            "title": "Update Project Configuration to Remove Blog References",
+            "description": "Remove any configuration files, environment variables, or settings that reference the blog collection.",
+            "dependencies": [
+              "6.3"
+            ],
+            "details": "Review project configuration files such as astro.config.mjs, environment files, and any other relevant settings to eliminate blog-related configurations.",
+            "status": "done",
+            "testStrategy": "Verify that configuration files no longer contain blog collection references and that the project builds without errors."
+          },
+          {
+            "id": 5,
+            "title": "Update Documentation to Reflect Blog Collection Removal",
+            "description": "Revise all project documentation to remove mentions of the blog collection and update any related instructions or diagrams.",
+            "dependencies": [
+              "6.4"
+            ],
+            "details": "Ensure README files, developer guides, and any other documentation are updated to reflect the removal of the blog collection.",
+            "status": "done",
+            "testStrategy": "Review documentation changes for completeness and accuracy, ensuring no outdated blog references remain."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Remove TableOfContents Feature",
+        "description": "This task involves completely removing the TableOfContents feature from the codebase, ensuring that all references and configurations related to it are eliminated.",
+        "details": "1. **Identify All References:** Search the entire codebase for any references to the TableOfContents feature, including database schemas, API endpoints, UI components, and configuration files. 2. **Remove Database Artifacts:** If applicable, drop or archive any database artifacts related to the TableOfContents feature, ensuring data backup if necessary. 3. **Codebase Cleanup:** Remove all code that interacts with the TableOfContents feature, including models, controllers, services, and UI elements. 4. **Update Configuration:** Remove any configuration settings related to the TableOfContents feature from configuration files. 5. **Documentation Update:** Update any documentation that references the TableOfContents feature to reflect its removal.",
+        "testStrategy": "1. **Codebase Search:** Perform a comprehensive search to confirm no references to the TableOfContents feature remain. 2. **Run Application:** Run the application to ensure it functions correctly without any errors related to the TableOfContents feature. 3. **Check Build Output:** Review the build output to ensure there are no warnings or errors related to the removed feature. 4. **User Acceptance Testing:** Conduct user acceptance testing to ensure that the removal of the TableOfContents feature does not affect other functionalities.",
+        "status": "pending",
+        "dependencies": [
+          2,
+          3
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Identify All References to TableOfContents",
+            "description": "Search the entire codebase for any references to the TableOfContents feature, including database schemas, API endpoints, UI components, and configuration files.",
+            "dependencies": [],
+            "details": "Use a code search tool or IDE features to locate all instances of 'TableOfContents' in the codebase. Document each reference found for further action.",
+            "status": "pending",
+            "testStrategy": "Verify that all references are documented and categorized for removal."
+          },
+          {
+            "id": 2,
+            "title": "Remove Database Artifacts Related to TableOfContents",
+            "description": "Drop or archive any database artifacts related to the TableOfContents feature, ensuring data backup if necessary.",
+            "dependencies": [
+              "7.1"
+            ],
+            "details": "Identify any database tables or records associated with the TableOfContents feature. Use SQL commands to drop these tables or create backups as needed before removal.",
+            "status": "pending",
+            "testStrategy": "Confirm that all related database artifacts are removed or archived by running a database query."
+          },
+          {
+            "id": 3,
+            "title": "Clean Up Codebase",
+            "description": "Remove all code that interacts with the TableOfContents feature, including models, controllers, services, and UI elements.",
+            "dependencies": [
+              "7.2"
+            ],
+            "details": "Systematically go through the codebase to delete all files and code segments that reference or depend on the TableOfContents feature. Ensure that the application still compiles without errors.",
+            "status": "pending",
+            "testStrategy": "Run the application to ensure it functions correctly without any errors related to the TableOfContents feature."
+          },
+          {
+            "id": 4,
+            "title": "Update Configuration Files",
+            "description": "Remove any configuration settings related to the TableOfContents feature from configuration files.",
+            "dependencies": [
+              "7.3"
+            ],
+            "details": "Review all configuration files (e.g., environment variables, settings files) for any entries related to the TableOfContents feature and remove them.",
+            "status": "pending",
+            "testStrategy": "Check the configuration files to ensure no references to the TableOfContents feature remain."
+          },
+          {
+            "id": 5,
+            "title": "Update Documentation",
+            "description": "Update any documentation that references the TableOfContents feature to reflect its removal.",
+            "dependencies": [
+              "7.4"
+            ],
+            "details": "Review all project documentation, including README files, API documentation, and user guides, to remove or update sections that mention the TableOfContents feature.",
+            "status": "pending",
+            "testStrategy": "Conduct a final review of the documentation to ensure all references to the TableOfContents feature have been removed."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Install DaisyUI for Astro Project",
+        "description": "Integrate DaisyUI into the Astro project that already has TailwindCSS and Vite installed.",
+        "details": "1. **Install DaisyUI**: Use npm or yarn to install DaisyUI by running `npm install daisyui` or `yarn add daisyui`. 2. **Configure TailwindCSS**: Open the TailwindCSS configuration file (tailwind.config.js) and add DaisyUI as a plugin. This can be done by adding `require('daisyui')` to the plugins array. 3. **Update Styles**: Ensure that the global styles are updated to include DaisyUI components. You may need to import DaisyUI styles in your main CSS file. 4. **Test Components**: Utilize DaisyUI components in your Astro project to ensure they render correctly and integrate seamlessly with existing styles. 5. **Documentation Review**: Review DaisyUI documentation for any additional configuration or usage guidelines that may be necessary for optimal integration.",
+        "testStrategy": "1. **Component Rendering**: Create a test page that uses various DaisyUI components to verify they render correctly. 2. **Style Verification**: Check that the styles applied by DaisyUI do not conflict with existing TailwindCSS styles. 3. **Functionality Testing**: Interact with DaisyUI components (e.g., buttons, modals) to ensure they function as expected. 4. **Build and Deploy**: Run the build process and deploy the application to confirm that DaisyUI is included in the final output without errors.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Install DaisyUI",
+            "description": "Use npm or yarn to install DaisyUI in the Astro project.",
+            "dependencies": [],
+            "details": "Run the command `npm install daisyui` or `yarn add daisyui` in the terminal to install DaisyUI as a dependency in your project.",
+            "status": "pending",
+            "testStrategy": "Verify that DaisyUI is listed in the package.json dependencies."
+          },
+          {
+            "id": 2,
+            "title": "Configure TailwindCSS",
+            "description": "Add DaisyUI as a plugin in the TailwindCSS configuration.",
+            "dependencies": [],
+            "details": "Open the tailwind.config.js file and add `require('daisyui')` to the plugins array. Ensure that the configuration is correctly formatted.",
+            "status": "pending",
+            "testStrategy": "Check the TailwindCSS configuration file to confirm that DaisyUI is included in the plugins array."
+          },
+          {
+            "id": 3,
+            "title": "Update Global Styles",
+            "description": "Ensure that the global styles include DaisyUI components.",
+            "dependencies": [],
+            "details": "Import DaisyUI styles in your main CSS file by adding `@import 'daisyui';` at the top of your CSS file to ensure DaisyUI components are styled correctly.",
+            "status": "pending",
+            "testStrategy": "Inspect the main CSS file to confirm that DaisyUI styles are imported."
+          },
+          {
+            "id": 4,
+            "title": "Test DaisyUI Components",
+            "description": "Utilize DaisyUI components in the Astro project to verify their functionality and appearance.",
+            "dependencies": [],
+            "details": "Create a test page in your Astro project that uses various DaisyUI components. Ensure they render correctly and integrate seamlessly with existing styles.",
+            "status": "pending",
+            "testStrategy": "Check the test page in the browser to ensure all DaisyUI components render without errors and match the expected styles."
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-08-20T19:46:17.555Z",
       "description": "Default tasks context",
-      "updated": "2025-08-20T21:21:47.069Z"
+      "updated": "2025-08-21T16:34:59.569Z"
     }
   }
 }

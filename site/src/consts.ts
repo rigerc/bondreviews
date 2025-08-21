@@ -2,7 +2,7 @@ import type { Metadata, Site, MenuItem } from "@types";
 
 export const SITE: Site = {
   TITLE: "Bond Reviews",
-  DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
+  DESCRIPTION: "An accessible and lightweight website built with Astro.",
   EMAIL: "bond@bsgb.nl",
   NUM_POSTS_ON_HOMEPAGE: 15,
   NUM_REVIEWS_ON_HOMEPAGE: 15,
@@ -11,11 +11,6 @@ export const SITE: Site = {
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
-};
-
-export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
 };
 
 export const REVIEWS: Metadata = {
