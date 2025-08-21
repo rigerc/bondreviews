@@ -1,0 +1,78 @@
+# Decap CMS Configuration for Reviews Collection
+media_folder: "site/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "reviews"
+    label: "Reviews"
+    label_singular: "Review"
+    description: "Product, movie, book, or music reviews"
+    folder: "site/src/content/reviews"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Human-readable title of the review"
+        
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        required: true
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        hint: "Publication date"
+        
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        required: false
+        default: false
+        hint: "Exclude from production when true"
+        
+      - label: "Rating"
+        name: "rating"
+        widget: "number"
+        required: true
+        value_type: "int"
+        min: 1
+        max: 5
+        hint: "Numeric rating between 1-5"
+        
+      - label: "Related Link"
+        name: "related_link"
+        widget: "string"
+        required: false
+        pattern: ['^https?://.*', "Must be valid URL"]
+        hint: "URL pointing to related resource (album, IMDB, product page, etc.)"
+        
+      - label: "Release Year"
+        name: "release_year"
+        widget: "number"
+        required: false
+        value_type: "int"
+        hint: "Year of release"
+        
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        required: true
+        multiple: false
+        options:
+          - "music"
+          - "film"
+          - "book"
+          - "product"
+          - "game"
+        hint: "Single category tag for classification"
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Review content in markdown format"

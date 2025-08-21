@@ -474,12 +474,53 @@
             "testStrategy": "Check the test page in the browser to ensure all DaisyUI components render without errors and match the expected styles."
           }
         ]
+      },
+      {
+        "id": 9,
+        "title": "Run npm i -D astro-decap-collection and Analyze Output",
+        "description": "Execute the command to install the astro-decap-collection package in the site/ directory and analyze the output for any errors or issues, particularly focusing on compatibility with React versions.",
+        "status": "pending",
+        "dependencies": [
+          8
+        ],
+        "priority": "medium",
+        "details": "1. **Navigate to Directory**: Open a terminal and change the directory to 'site/' using `cd site/`. 2. **Run Installation Command**: Execute the command `npm i -D astro-decap-collection` to install the package as a development dependency. 3. **Analyze Output**: Carefully review the terminal output for any error messages or warnings that may indicate issues with the installation. Pay attention to version conflicts, particularly the compatibility mismatch with React versions (project uses `react@19.1.1`, while many `decap-cms` related packages expect older versions). 4. **Document Findings**: Record any errors or issues encountered during the installation process, including the `npm warn ERESOLVE overriding peer dependency` messages and the 6 high-severity vulnerabilities reported by `npm audit`, along with potential solutions or next steps to resolve them.",
+        "testStrategy": "1. **Successful Installation**: Verify that the command completes without critical errors. 2. **Check Package Installation**: Ensure that the astro-decap-collection package appears in the package.json file under devDependencies. 3. **Run Application**: If the installation is successful, run the application to confirm that it operates correctly with the newly installed package. 4. **Review Documentation**: Consult the astro-decap-collection documentation to ensure that any necessary configuration steps are followed post-installation. 5. **Address Compatibility Issues**: Investigate potential solutions for the compatibility mismatch with React versions and document any necessary changes.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Document npm warnings and vulnerabilities",
+            "description": "Record the npm warnings regarding peer dependency overrides and the high-severity vulnerabilities reported by npm audit.",
+            "status": "done",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Investigate compatibility with React versions",
+            "description": "Research the compatibility issues between astro-decap-collection and the current React version (19.1.1) and identify potential solutions.",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Propose solutions for React version conflicts",
+            "description": "Based on the investigation, propose solutions to address the compatibility issues with React versions, including possible downgrades or alternative packages.",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          }
+        ]
       }
     ],
     "metadata": {
       "created": "2025-08-20T19:46:17.555Z",
       "description": "Default tasks context",
-      "updated": "2025-08-21T17:25:06.004Z"
+      "updated": "2025-08-21T22:03:59.727Z"
     }
   }
 }
